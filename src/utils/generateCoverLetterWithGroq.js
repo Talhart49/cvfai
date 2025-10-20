@@ -81,8 +81,10 @@ const callOpenRouter = async (resumeText, jobDescription) => {
 
 export const generateThreeCoverLetters = async ({ resumeText, jobDescription }) => {
     try {
-        const groqModels = ['llama3-8b-8192', 'llama3-70b-8192'];
-
+        const groqModels = [
+            'llama-3.1-8b-instant',
+            'llama-3.3-70b-versatile'
+        ];
         const groqPromises = groqModels.map((model) =>
             callGroq(model, resumeText, jobDescription)
         );
